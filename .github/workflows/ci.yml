@@ -1,0 +1,11 @@
+name: Native macOS checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  native:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - run: xcodebuild -project IsleKit.xcodeproj -scheme IsleKit -configuration Debug -destination 'platform=macOS' CODE_SIGN_IDENTITY=- build
+      - run: SIGN_IDENTITY=- make app

@@ -1,0 +1,18 @@
+name: Build macOS preview
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  bundle:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - run: make dmg
+        env:
+          SIGN_IDENTITY: "-"
+          ARCHS: arm64 x86_64
+      - uses: actions/upload-artifact@v4
+        with:
+          name: IsleKit-macOS-universal-preview
+          path: dist/IsleKit.dmg
+          if-no-files-found: error

@@ -1,0 +1,13 @@
+dist/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+*.db
+*.db-*
+.build/
+.swiftpm/
+DerivedData/
+xcuserdata/
+*.xcuserstate

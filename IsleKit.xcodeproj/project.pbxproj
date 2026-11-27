@@ -1,0 +1,461 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+		BCF42A66B49710373E162FBD = {
+			isa = "PBXShellScriptBuildPhase";
+			name = "Embed clipboard key service";
+			buildActionMask = 2147483647;
+			files = ();
+			inputPaths = ("$(SRCROOT)/scripts/embed-clipboard-key.sh", "$(SRCROOT)/Packages/IsleKitModules/Sources/ClipboardPlugin/ClipboardKey.swift", "$(SRCROOT)/Services/ClipboardKey/main.swift", "$(SRCROOT)/Services/ClipboardKey/Info.plist");
+			outputPaths = ("$(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/XPCServices/ClipboardKey.xpc");
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/bin/bash";
+			shellScript = "scripts/embed-clipboard-key.sh \"$TARGET_BUILD_DIR/$CONTENTS_FOLDER_PATH\" \"${EXPANDED_CODE_SIGN_IDENTITY:--}\" $ARCHS";
+		};
+		582681C2EAE02B3F3D399C0C = {
+			isa = "XCLocalSwiftPackageReference";
+			relativePath = "Packages/IsleKitModules";
+		};
+		96D4BDA5E0B7B6B14AFE686F = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "App/IsleKitApp.swift";
+			sourceTree = "SOURCE_ROOT";
+		};
+		DA30C053BF0C872CAAB85AEA = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "App/Launcher/Launcher.swift";
+			sourceTree = "SOURCE_ROOT";
+		};
+		7ED08D9C58D2B5C437D159A2 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "App/PluginHost/PluginList.swift";
+			sourceTree = "SOURCE_ROOT";
+		};
+		86E60406C9CB9423B62D9753 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "App/Settings/Preferences.swift";
+			sourceTree = "SOURCE_ROOT";
+		};
+		E52E2C2E761EB38A13D76AC2 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "App/Shell.swift";
+			sourceTree = "SOURCE_ROOT";
+		};
+		4280FA4B3CAEC9972B89A4B4 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "App/System/Desktop.swift";
+			sourceTree = "SOURCE_ROOT";
+		};
+		9AA3211435662538CCF7A83E = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "App/System/Shortcut.swift";
+			sourceTree = "SOURCE_ROOT";
+		};
+		C97383F7E6444BBAA8E197DF = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "App/System/WindowEditingDismissal.swift";
+			sourceTree = "SOURCE_ROOT";
+		};
+		63D17EAFA6AB67229314CBB8 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "sourcecode.swift";
+			path = "Extensions/IsleKitFinderSync/FinderSync.swift";
+			sourceTree = "SOURCE_ROOT";
+		};
+		E0C46FC9C6960273B8657C66 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "folder.assetcatalog";
+			path = "App/Assets.xcassets";
+			sourceTree = "SOURCE_ROOT";
+		};
+		3275A5719D4998ADFD2F7BB7 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "folder";
+			path = "App/Notices";
+			sourceTree = "SOURCE_ROOT";
+		};
+		2678A7D70F8122056F065999 = {
+			isa = "XCSwiftPackageProductDependency";
+			package = "582681C2EAE02B3F3D399C0C";
+			productName = "FinderActionsShared";
+		};
+		8DA14ECF86012DEC72F18FB9 = {
+			isa = "PBXBuildFile";
+			productRef = "2678A7D70F8122056F065999";
+		};
+		B117249A7B05AD644D15ACD3 = {
+			isa = "PBXBuildFile";
+			fileRef = "63D17EAFA6AB67229314CBB8";
+		};
+		690C6A8C8E8C83E873510F09 = {
+			isa = "PBXSourcesBuildPhase";
+			buildActionMask = 2147483647;
+			files = ("B117249A7B05AD644D15ACD3");
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF0BA3883A40EE0F3C157FE0 = {
+			isa = "PBXFrameworksBuildPhase";
+			buildActionMask = 2147483647;
+			files = ("8DA14ECF86012DEC72F18FB9");
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		699370AB21F5D8C66ADDEC07 = {
+			isa = "PBXFileReference";
+			explicitFileType = "wrapper.app-extension";
+			includeInIndex = 0;
+			path = "IsleKitFinderSync.appex";
+			sourceTree = "BUILT_PRODUCTS_DIR";
+		};
+		0DFB3EB0F73EC1E690AB3E73 = {
+			isa = "XCBuildConfiguration";
+			name = "Debug";
+			buildSettings = {
+				PRODUCT_NAME = "IsleKitFinderSync";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.subsequence-cpu.IsleKit.findersync";
+				CODE_SIGN_STYLE = "Manual";
+				CODE_SIGN_IDENTITY = "IsleKit Local Development";
+				ENABLE_HARDENED_RUNTIME = "YES";
+				INFOPLIST_FILE = "Extensions/IsleKitFinderSync/Info.plist";
+				CODE_SIGN_ENTITLEMENTS = "Extensions/IsleKitFinderSync/Finder.entitlements";
+				APPLICATION_EXTENSION_API_ONLY = "YES";
+				SKIP_INSTALL = "YES";
+			};
+		};
+		3993A8F86E3FFAC704DC346D = {
+			isa = "XCBuildConfiguration";
+			name = "Release";
+			buildSettings = {
+				PRODUCT_NAME = "IsleKitFinderSync";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.subsequence-cpu.IsleKit.findersync";
+				CODE_SIGN_STYLE = "Manual";
+				CODE_SIGN_IDENTITY = "IsleKit Local Development";
+				ENABLE_HARDENED_RUNTIME = "YES";
+				INFOPLIST_FILE = "Extensions/IsleKitFinderSync/Info.plist";
+				CODE_SIGN_ENTITLEMENTS = "Extensions/IsleKitFinderSync/Finder.entitlements";
+				APPLICATION_EXTENSION_API_ONLY = "YES";
+				SKIP_INSTALL = "YES";
+			};
+		};
+		05222C046E2A0279921EC6DF = {
+			isa = "XCConfigurationList";
+			buildConfigurations = ("0DFB3EB0F73EC1E690AB3E73", "3993A8F86E3FFAC704DC346D");
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+		9F194446954C89395F28B196 = {
+			isa = "PBXNativeTarget";
+			name = "IsleKitFinderSync";
+			productName = "IsleKitFinderSync";
+			productReference = "699370AB21F5D8C66ADDEC07";
+			productType = "com.apple.product-type.app-extension";
+			buildConfigurationList = "05222C046E2A0279921EC6DF";
+			buildPhases = ("690C6A8C8E8C83E873510F09", "BF0BA3883A40EE0F3C157FE0");
+			buildRules = ();
+			dependencies = ();
+			packageProductDependencies = ("2678A7D70F8122056F065999");
+		};
+		263BAE8582EB07CF6833DAA6 = {
+			isa = "XCSwiftPackageProductDependency";
+			package = "582681C2EAE02B3F3D399C0C";
+			productName = "PluginKit";
+		};
+		2877DCB9CD165DAD12E26B48 = {
+			isa = "PBXBuildFile";
+			productRef = "263BAE8582EB07CF6833DAA6";
+		};
+		12122E7A60B5D8ABAB90C858 = {
+			isa = "XCSwiftPackageProductDependency";
+			package = "582681C2EAE02B3F3D399C0C";
+			productName = "DesignSystem";
+		};
+		0F891FE653E2936AA472B68F = {
+			isa = "PBXBuildFile";
+			productRef = "12122E7A60B5D8ABAB90C858";
+		};
+		BABB9ED2DA0FEEC1D8060A42 = {
+			isa = "XCSwiftPackageProductDependency";
+			package = "582681C2EAE02B3F3D399C0C";
+			productName = "DeveloperToolsPlugin";
+		};
+		60049EBA449968BFEA4973FB = {
+			isa = "PBXBuildFile";
+			productRef = "BABB9ED2DA0FEEC1D8060A42";
+		};
+		321A1F9774683FFDC9B89028 = {
+			isa = "XCSwiftPackageProductDependency";
+			package = "582681C2EAE02B3F3D399C0C";
+			productName = "ClipboardPlugin";
+		};
+		1AEB86EDC1AACB44AB632D43 = {
+			isa = "PBXBuildFile";
+			productRef = "321A1F9774683FFDC9B89028";
+		};
+		03DC9B4DE786A5BB5F39B031 = {
+			isa = "XCSwiftPackageProductDependency";
+			package = "582681C2EAE02B3F3D399C0C";
+			productName = "FinderActionsPlugin";
+		};
+		6E2362013D26DF3094669FC6 = {
+			isa = "PBXBuildFile";
+			productRef = "03DC9B4DE786A5BB5F39B031";
+		};
+		F86ACCAEBFE749A48E9C763A = {
+			isa = "XCSwiftPackageProductDependency";
+			package = "582681C2EAE02B3F3D399C0C";
+			productName = "MousePlugin";
+		};
+		D9C9193D653085B9CC66211F = {
+			isa = "PBXBuildFile";
+			productRef = "F86ACCAEBFE749A48E9C763A";
+		};
+		20488F100EAA63C76C3C89D9 = {
+			isa = "PBXBuildFile";
+			fileRef = "96D4BDA5E0B7B6B14AFE686F";
+		};
+		16C35D5BB2645898343BD4B4 = {
+			isa = "PBXBuildFile";
+			fileRef = "DA30C053BF0C872CAAB85AEA";
+		};
+		D850BA08857FDBC2C9FFABA6 = {
+			isa = "PBXBuildFile";
+			fileRef = "7ED08D9C58D2B5C437D159A2";
+		};
+		2470F92AA71C930F0777D4A5 = {
+			isa = "PBXBuildFile";
+			fileRef = "86E60406C9CB9423B62D9753";
+		};
+		7FC017CC8E25E1040B8C18B7 = {
+			isa = "PBXBuildFile";
+			fileRef = "E52E2C2E761EB38A13D76AC2";
+		};
+		1B320E4D67A187A10449F4F8 = {
+			isa = "PBXBuildFile";
+			fileRef = "4280FA4B3CAEC9972B89A4B4";
+		};
+		F21F19A9920A0C550AEBEC09 = {
+			isa = "PBXBuildFile";
+			fileRef = "9AA3211435662538CCF7A83E";
+		};
+		19B04A29190941E9BD2BB80C = {
+			isa = "PBXBuildFile";
+			fileRef = "C97383F7E6444BBAA8E197DF";
+		};
+		3F02DCB8B49BF652949354BD = {
+			isa = "PBXSourcesBuildPhase";
+			buildActionMask = 2147483647;
+			files = ("20488F100EAA63C76C3C89D9", "16C35D5BB2645898343BD4B4", "D850BA08857FDBC2C9FFABA6", "2470F92AA71C930F0777D4A5", "7FC017CC8E25E1040B8C18B7", "1B320E4D67A187A10449F4F8", "F21F19A9920A0C550AEBEC09", "19B04A29190941E9BD2BB80C");
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AA039980F4E1AD1BC0E06D1 = {
+			isa = "PBXFrameworksBuildPhase";
+			buildActionMask = 2147483647;
+			files = ("2877DCB9CD165DAD12E26B48", "0F891FE653E2936AA472B68F", "60049EBA449968BFEA4973FB", "1AEB86EDC1AACB44AB632D43", "6E2362013D26DF3094669FC6", "D9C9193D653085B9CC66211F");
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B5B4F597AD3ACD2F70EAF10 = {
+			isa = "PBXBuildFile";
+			fileRef = "E0C46FC9C6960273B8657C66";
+		};
+		08FC4134C2335BEB99F0FCC5 = {
+			isa = "PBXBuildFile";
+			fileRef = "3275A5719D4998ADFD2F7BB7";
+		};
+		A51F99A7BCDB457E5DF7F707 = {
+			isa = "PBXResourcesBuildPhase";
+			buildActionMask = 2147483647;
+			files = ("0B5B4F597AD3ACD2F70EAF10", "08FC4134C2335BEB99F0FCC5");
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8043D3D8A862DD906456571 = {
+			isa = "PBXBuildFile";
+			fileRef = "699370AB21F5D8C66ADDEC07";
+			settings = {
+				ATTRIBUTES = ("RemoveHeadersOnCopy");
+			};
+		};
+		CFFF27C96089B93150F3553B = {
+			isa = "PBXCopyFilesBuildPhase";
+			buildActionMask = 2147483647;
+			files = ("D8043D3D8A862DD906456571");
+			runOnlyForDeploymentPostprocessing = 0;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			name = "Embed App Extensions";
+		};
+		FC81543AB18F51B651B703A0 = {
+			isa = "PBXFileReference";
+			explicitFileType = "wrapper.application";
+			includeInIndex = 0;
+			path = "IsleKit.app";
+			sourceTree = "BUILT_PRODUCTS_DIR";
+		};
+		B03C2DE4D8DA2AB51AC57A63 = {
+			isa = "XCBuildConfiguration";
+			name = "Debug";
+			buildSettings = {
+				PRODUCT_NAME = "IsleKit";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.subsequence-cpu.IsleKit";
+				CODE_SIGN_STYLE = "Manual";
+				CODE_SIGN_IDENTITY = "IsleKit Local Development";
+				ENABLE_HARDENED_RUNTIME = "YES";
+				INFOPLIST_FILE = "App/Info.plist";
+				CODE_SIGN_ENTITLEMENTS = "App/IsleKit.entitlements";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon";
+			};
+		};
+		6B001B5A721B5D227438C781 = {
+			isa = "XCBuildConfiguration";
+			name = "Release";
+			buildSettings = {
+				PRODUCT_NAME = "IsleKit";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.subsequence-cpu.IsleKit";
+				CODE_SIGN_STYLE = "Manual";
+				CODE_SIGN_IDENTITY = "IsleKit Local Development";
+				ENABLE_HARDENED_RUNTIME = "YES";
+				INFOPLIST_FILE = "App/Info.plist";
+				CODE_SIGN_ENTITLEMENTS = "App/IsleKit.entitlements";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon";
+			};
+		};
+		1FED7383F95CC9C1C12E5119 = {
+			isa = "XCConfigurationList";
+			buildConfigurations = ("B03C2DE4D8DA2AB51AC57A63", "6B001B5A721B5D227438C781");
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+		522BBA0746FE7C6987A9532C = {
+			isa = "PBXContainerItemProxy";
+			containerPortal = "98F54143AB4E86B28C3AFEE0";
+			proxyType = 1;
+			remoteGlobalIDString = "9F194446954C89395F28B196";
+			remoteInfo = "IsleKitFinderSync";
+		};
+		9090A25544D3501D5EACDB62 = {
+			isa = "PBXTargetDependency";
+			target = "9F194446954C89395F28B196";
+			targetProxy = "522BBA0746FE7C6987A9532C";
+		};
+		2076AC166EB1A5F40A56DF23 = {
+			isa = "PBXNativeTarget";
+			name = "IsleKit";
+			productName = "IsleKit";
+			productReference = "FC81543AB18F51B651B703A0";
+			productType = "com.apple.product-type.application";
+			buildConfigurationList = "1FED7383F95CC9C1C12E5119";
+			buildPhases = ("3F02DCB8B49BF652949354BD", "0AA039980F4E1AD1BC0E06D1", "A51F99A7BCDB457E5DF7F707", "CFFF27C96089B93150F3553B", "BCF42A66B49710373E162FBD");
+			buildRules = ();
+			dependencies = ("9090A25544D3501D5EACDB62");
+			packageProductDependencies = ("263BAE8582EB07CF6833DAA6", "12122E7A60B5D8ABAB90C858", "BABB9ED2DA0FEEC1D8060A42", "321A1F9774683FFDC9B89028", "03DC9B4DE786A5BB5F39B031", "F86ACCAEBFE749A48E9C763A");
+		};
+		FBDC4F23F93125BBEEAE800C = {
+			isa = "PBXGroup";
+			name = "Products";
+			children = ("699370AB21F5D8C66ADDEC07", "FC81543AB18F51B651B703A0");
+			sourceTree = "<group>";
+		};
+		A2CDD2B51B9CC7AF9D7B2D55 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "text.plist.xml";
+			path = "App/Info.plist";
+			sourceTree = "SOURCE_ROOT";
+		};
+		A991B515A0C44C2D801B30A3 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "text.plist.entitlements";
+			path = "App/IsleKit.entitlements";
+			sourceTree = "SOURCE_ROOT";
+		};
+		8025087A9E2E8D0E95E2DA21 = {
+			isa = "PBXGroup";
+			name = "App";
+			children = ("96D4BDA5E0B7B6B14AFE686F", "DA30C053BF0C872CAAB85AEA", "7ED08D9C58D2B5C437D159A2", "86E60406C9CB9423B62D9753", "E52E2C2E761EB38A13D76AC2", "4280FA4B3CAEC9972B89A4B4", "9AA3211435662538CCF7A83E", "C97383F7E6444BBAA8E197DF", "E0C46FC9C6960273B8657C66", "3275A5719D4998ADFD2F7BB7", "A2CDD2B51B9CC7AF9D7B2D55", "A991B515A0C44C2D801B30A3");
+			sourceTree = "<group>";
+		};
+		131B4BBA3EB325C5D1B31C7F = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "text.plist.xml";
+			path = "Extensions/IsleKitFinderSync/Info.plist";
+			sourceTree = "SOURCE_ROOT";
+		};
+		8FD528FE1525617913A29E64 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "text.plist.entitlements";
+			path = "Extensions/IsleKitFinderSync/Finder.entitlements";
+			sourceTree = "SOURCE_ROOT";
+		};
+		FF432B467F0803C332354C82 = {
+			isa = "PBXGroup";
+			name = "Extensions";
+			children = ("63D17EAFA6AB67229314CBB8", "131B4BBA3EB325C5D1B31C7F", "8FD528FE1525617913A29E64");
+			sourceTree = "<group>";
+		};
+		B28B7AF69320201D1CF206EB = {
+			isa = "PBXGroup";
+			name = "IsleKit";
+			children = ("8025087A9E2E8D0E95E2DA21", "FF432B467F0803C332354C82", "FBDC4F23F93125BBEEAE800C");
+			sourceTree = "<group>";
+		};
+		657EE81F72B04E344AD48704 = {
+			isa = "XCBuildConfiguration";
+			name = "Debug";
+			buildSettings = {
+				SDKROOT = "macosx";
+				MACOSX_DEPLOYMENT_TARGET = "13.0";
+				SWIFT_VERSION = "6.0";
+				CLANG_ENABLE_MODULES = "YES";
+				SWIFT_STRICT_CONCURRENCY = "complete";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				DEBUG_INFORMATION_FORMAT = "dwarf";
+			};
+		};
+		AA45CF0082C822F46E1F835F = {
+			isa = "XCBuildConfiguration";
+			name = "Release";
+			buildSettings = {
+				SDKROOT = "macosx";
+				MACOSX_DEPLOYMENT_TARGET = "13.0";
+				SWIFT_VERSION = "6.0";
+				CLANG_ENABLE_MODULES = "YES";
+				SWIFT_STRICT_CONCURRENCY = "complete";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+			};
+		};
+		BD59A88C5EC2D65E34727A49 = {
+			isa = "XCConfigurationList";
+			buildConfigurations = ("657EE81F72B04E344AD48704", "AA45CF0082C822F46E1F835F");
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release";
+		};
+		98F54143AB4E86B28C3AFEE0 = {
+			isa = "PBXProject";
+			attributes = {
+				LastUpgradeCheck = "1600";
+			};
+			buildConfigurationList = "BD59A88C5EC2D65E34727A49";
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = "zh-Hans";
+			hasScannedForEncodings = 0;
+			knownRegions = ("zh-Hans", "en", "Base");
+			mainGroup = "B28B7AF69320201D1CF206EB";
+			productRefGroup = "FBDC4F23F93125BBEEAE800C";
+			projectDirPath = "";
+			projectRoot = "";
+			packageReferences = ("582681C2EAE02B3F3D399C0C");
+			targets = ("9F194446954C89395F28B196", "2076AC166EB1A5F40A56DF23");
+		};
+	};
+	rootObject = "98F54143AB4E86B28C3AFEE0";
+}
