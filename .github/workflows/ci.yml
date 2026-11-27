@@ -7,5 +7,10 @@ jobs:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
-      - run: xcodebuild -project IsleKit.xcodeproj -scheme IsleKit -configuration Debug -destination 'platform=macOS' CODE_SIGN_IDENTITY=- build
+      - name: Build Xcode project
+        shell: bash
+        run: |
+          set -o pipefail
+          xcodebuild -project IsleKit.xcodeproj -scheme IsleKit -configuration Debug \
+            -destination 'platform=macOS' CODE_SIGN_IDENTITY=- build 2>&1 | xcbeautify --renderer github-actions
       - run: SIGN_IDENTITY=- make app
