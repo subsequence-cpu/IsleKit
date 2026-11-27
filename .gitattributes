@@ -1,1 +1,4 @@
 * text=auto eol=lf
+
+/Packages/IsleKitModules/Sources/CSQLCipher/** linguist-vendored
+/Packages/IsleKitModules/Sources/CHID/** linguist-vendored
