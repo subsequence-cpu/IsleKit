@@ -119,7 +119,7 @@ public actor History {
     return db
   }
 
-  private func save(_ db: CipherDatabase, kind: String, payload: Data, time: Int64, pinned: Bool)
+  private static func save(_ db: CipherDatabase, kind: String, payload: Data, time: Int64, pinned: Bool)
     throws
   {
     guard ["text", "image"].contains(kind), !payload.isEmpty else {
@@ -148,7 +148,7 @@ public actor History {
     let time = Int64(Date().timeIntervalSince1970 * 1000)
     guard data.count <= 32 * 1024 * 1024 else { throw StorageError("单条记录超过 32 MB") }
     try db.transaction {
-      try save(db, kind: kind, payload: data, time: time, pinned: false)
+      try Self.save(db, kind: kind, payload: data, time: time, pinned: false)
       try db.update(
         "DELETE FROM clips WHERE pinned=0 AND time < ?",
         [.integer(time - Int64(max(1, days)) * 86_400_000)])
